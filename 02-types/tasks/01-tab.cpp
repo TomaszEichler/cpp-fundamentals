@@ -1,17 +1,21 @@
 #include <iostream>
 
-constexpr size_t tab_size = 100;
+constexpr size_t tabSize = 100;
 
 int main() {
-    int tab[tab_size];
+    int tab[tabSize]{};
 
-    for (size_t i = 0; i < tab_size; ++i) {
-        tab[i] = i;
+    for (int i = 0, j = 0; j < tabSize; ++i) {
+        if (i % 2) {
+            tab[j] = i;
+            j++;
+        }
     }
 
-    for (size_t i = 0; i < tab_size; ++i) {
-        std::cout << tab[i] << "\n";
+    for (int i = 0; i < tabSize; ++i) {
+        std::cout << tab[i] << "\t";
     }
+    std::cout << "\n";
 
     return 0;
 }
