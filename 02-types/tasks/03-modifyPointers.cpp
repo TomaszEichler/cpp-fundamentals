@@ -5,6 +5,14 @@
 // bar() should modify value under passed pointer to 20
 // Can we have a pointer to const or a const pointer?
 
+void foo(int* ptr) {
+    *ptr = 10;
+}
+
+void bar(int* ptr) {
+    *ptr = 20;
+}
+
 int main() {
     int number = 5;
     int* pointer = &number;
